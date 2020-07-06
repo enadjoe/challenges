@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>Bruteforce Challenge 3</title>
+  </head>
+  <body>
+    <script>
+      function login() {
+        var xhttp = new XMLHttpRequest();
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+        xhttp.onreadystatechange = function() {
+          if (this.responseText === 'Login Failure'){
+            document.getElementById("login-status").innerHTML = "Login Failed!";
+          } else if (this.responseText === 'Login Success!') {
+            document.getElementById("login-status").innerHTML = "Login Success!";
+          }
+        };
+        xhttp.open("GET", "/login3", true);
+        xhttp.setRequestHeader("Authorization", username + ':' + password);
+        xhttp.send();
+      }
+    </script>
+    <div id="body">
+        <a href="/" style="position: absolute;">
+          <button>Home</button>
+        </a>
+        <h3 style="margin-left: 70px;">Bruteforce Challenge 3</h3>
+      <hr>
+      <p>one day you posted, the next day you boasted, now its time to examine your head.</p>
+      Username<br>
+      <input type="text" name="username" id="username">
+      <br>
+      Password<br>
+      <input type="password" name="password" id="password">
+      <br><br>
+      <input onClick="login()" type="submit" value="Submit">
+      <p id="login-status"></p>
+    </div>
+  </body>
+</html>

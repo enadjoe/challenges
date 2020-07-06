@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>Browser Challenge 3</title>
+  </head>
+  <body>
+    <script>
+    sessionStorage.setItem("isLoggedIn", false);
+    
+    function checkLoggedIn() {
+
+      var loginStatus = sessionStorage.getItem("isLoggedIn");
+      if(loginStatus === "true" || loginStatus === true) {
+        document.getElementById('loginStatus').innerHTML = 'logged in: true'
+      }else{
+        document.getElementById('loginStatus').innerHTML = 'logged in: false'
+      }
+    }
+    </script>
+    <div id="body">
+        <a href="/" style="position: absolute;">
+          <button>Home</button>
+        </a>
+        <h3 style="margin-left: 70px;">Browser Challenge 3</h3>
+      <hr>
+      <p>the same but different, can you see the difference? For one with eyes to see, all is inside.</p>
+      <p id="loginStatus">logged in: false</p>
+      <input onClick="checkLoggedIn()" type="button" value="Check if logged in">
+    </div>
+  </body>
+</html>
