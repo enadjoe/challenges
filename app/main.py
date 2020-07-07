@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, session, send_from_directory
 import os
-from database import initalize_database, execute_query, get_database_handle
+from app.database import initalize_database, execute_query, get_database_handle
 import hashlib
 import uuid
 
