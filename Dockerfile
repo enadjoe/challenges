@@ -9,7 +9,7 @@ WORKDIR /app
 
 RUN pip3 install -r requirements.txt
 
-COPY ./webapp /app
+COPY ./app /app
 COPY ./startup.sh /
 EXPOSE 5000:5000/tcp
 RUN chmod 0755 /startup.sh
